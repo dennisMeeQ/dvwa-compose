@@ -1,0 +1,15 @@
+# Use postgres/password user/password credentials
+version: '3.1'
+
+services:
+  dvwa:
+    image: korius/dvwa-no-db
+    ports:
+      - 8082:80
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DB: dvwa
+      ports: 3307:3306
+
